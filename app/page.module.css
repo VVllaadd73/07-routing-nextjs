@@ -1,0 +1,30 @@
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  width: 90%;
+  max-width: 1280px;
+  margin: 0px auto;
+  padding: 0 16px 16px;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 60px;
+  text-align: center;
+  color: #d30000;
+}
+
+.description {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ff2ffc;
+  line-height: 28px;
+  margin-bottom: 16px;
+  text-align: center;
+}

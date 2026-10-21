@@ -1,0 +1,38 @@
+/* app/notes/filter/layout.module.css */
+
+.notesLayout {
+  display: flex;
+  min-height: 100vh;
+  background-color: #000;
+  color: #fff;
+}
+
+.notesSidebar {
+  width: 120px;
+  flex-shrink: 0;
+  padding: 15px;
+  background-color: #444444;
+}
+
+.notesContent {
+  flex: 1;
+  padding: 15px;
+}
+
+.notesSidebar ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.notesSidebar li {
+  line-height: 50px;
+}
+
+.notesSidebar a {
+  color: #ffffff;
+}
+
+.notesSidebar a:visited {
+  color: #ffffff;
+}
