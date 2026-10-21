@@ -4,10 +4,10 @@ import axios from 'axios';
 import type { Note, Notes, DataTag, CreateNotePayload } from '@/types/note';
 
 const API_KEY = process.env.NEXT_PUBLIC_NOTEHUB_TOKEN;
-const baseURL = 'https://notehub-public.goit.study/api';
+axios.defaults.baseURL = 'https://notehub-public.goit.study/api';
 
 export async function fetchNotes( page: number, tag?: DataTag, onQuery?: string ) {
-   const response = await axios.get<Notes>( `${baseURL}/notes`, {
+   const response = await axios.get<Notes>('/notes', {
       headers: {
          Authorization: `Bearer ${API_KEY}`,
       },
@@ -22,7 +22,7 @@ export async function fetchNotes( page: number, tag?: DataTag, onQuery?: string 
 }
 
 export async function createNote(payload: CreateNotePayload): Promise<Note> {
-   const response = await axios.post<Note>(`${baseURL}/notes`, payload, {
+   const response = await axios.post<Note>('/notes', payload, {
       headers: {
          Authorization: `Bearer ${API_KEY}`,
       },
@@ -32,7 +32,7 @@ export async function createNote(payload: CreateNotePayload): Promise<Note> {
 }
 
 export async function deleteNote(id: string) {
-   const response = await axios.delete<Note>(`${baseURL}/notes/${id}`, {
+   const response = await axios.delete<Note>(`/notes/${id}`, {
       headers: {
          Authorization: `Bearer ${API_KEY}`,
       },
@@ -41,7 +41,7 @@ export async function deleteNote(id: string) {
 }
 
 export async function fetchNoteId(id: string) {
-   const response = await axios.get<Note>(`${baseURL}/notes/${id}`, {
+   const response = await axios.get<Note>(`/notes/${id}`, {
       headers: {
          Authorization: `Bearer ${API_KEY}`,
       },
