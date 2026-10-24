@@ -13,7 +13,7 @@ const NotesByCategory = async ({ params }: Props) => {
   
   const queryClient = new QueryClient();
   await queryClient.query({
-    queryKey: ['notes', tag, 1],
+    queryKey: ['notes', tag, '', 1],
     queryFn: () => fetchNotes(1, tag)
   });
 
